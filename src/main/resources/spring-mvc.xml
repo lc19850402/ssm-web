@@ -17,7 +17,7 @@
 	
 	<mvc:default-servlet-handler />
 	<mvc:resources location="/WEB-INF/views/" mapping="/**/*.js"/>
-	<mvc:resources location="/WEB-INF/views/" mapping="/**/*.html"/>
+	<mvc:resources location="/WEB-INF/views/" mapping="/**/*.htm"/>
 	<mvc:resources location="/WEB-INF/views/" mapping="/**/*.css"/>
 	<mvc:resources location="/WEB-INF/views/" mapping="/**/*.png"/>
 	<mvc:resources location="/WEB-INF/views/" mapping="/**/*.gif"/>

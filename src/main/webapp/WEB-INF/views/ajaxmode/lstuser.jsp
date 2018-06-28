@@ -36,7 +36,7 @@
 					</dl>
 				</div>
 				<div class="table-responsive">
-					<table style="table-layout:fixed;" class="table table-bordered table-hover tabstyle">
+					<table style="table-layout: fixed;" class="table table-bordered table-hover tabstyle">
 						<thead>
 							<tr class="heading">
 								<th width="50px">序号</th>
@@ -44,7 +44,7 @@
 								<th width="50px">性別</th>
 								<th width="50px">年齡</th>
 								<th width="140px">生日</th>
-								<th style="text-align:left;">地址</th>
+								<th style="text-align: left;">地址</th>
 								<th width="80px">操作</th>
 							</tr>
 						</thead>
@@ -55,7 +55,7 @@
 								<td>{{row.user_sex}}</td>
 								<td><span ng-class="getclass(row)">{{row.user_age}}</span></td>
 								<td>{{row.user_birthday | date:'yyyy年MM月dd日'}}</td>
-								<td style="text-align:left;"><p class="ellipsis" title="{{row.user_address}}">{{row.user_address}}</p></td>
+								<td style="text-align: left;"><p class="ellipsis" title="{{row.user_address}}">{{row.user_address}}</p></td>
 								<td><a herf="javascript:;" ng-click="gotoitem(row)">编辑</a> <a herf="javascript:;"
 									ng-click="deleteitem(row)">删除</a></td>
 							</tr>

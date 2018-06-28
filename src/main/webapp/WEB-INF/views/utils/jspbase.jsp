@@ -22,7 +22,6 @@
 <link href="${base_url}/assets/global/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet"  type="text/css">
 <link href="${base_url}/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"  type="text/css">
 
-
 <script type="text/javascript" src="${base_url}/assets/global/plugins/jquery.min.js?version=${jsversion}"></script>
 <script type="text/javascript" src="${base_url}/assets/global/plugins/jquery.form.js?version=${jsversion}"></script>
 <script type="text/javascript" src="${base_url}/assets/global/plugins/bootstrap/js/bootstrap.min.js?version=${jsversion}"></script>
@@ -31,8 +30,10 @@
 <script type="text/javascript" src="${base_url}/assets/global/plugins/datepicker/WdatePicker.js?version=${jsversion}"></script>
 <script type="text/javascript" src="${base_url}/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js?version=${jsversion}"></script>
 <script type="text/javascript" src="${base_url}/assets/global/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js?version=${jsversion}"></script>
-<script type="text/javascript" src="${base_url}/assets/global/scripts/metronic.js"></script>
 <script type="text/javascript" src="${base_url}/assets/global/plugins/angular/angular.min.js?version=${jsversion}"></script>
-<script type="text/javascript" src="${base_url}/assets/global/plugins/angular/angular-route.min.js?version=${jsversion}"></script>
+<script type="text/javascript" src="${base_url}/assets/global/plugins/angular/angular-ui-router.js?version=${jsversion}"></script>
+<script type="text/javascript" src="${base_url}/assets/global/scripts/metronic.js"></script>
 <script type="text/javascript" src="${base_url}/assets/scripts/jquery.utils.js?version=${jsversion}"></script>
 <script type="text/javascript" src="${base_url}/assets/scripts/jquery.pager.js?version=${jsversion}"></script>
+
+
