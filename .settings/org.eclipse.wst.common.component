@@ -5,7 +5,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
-        <wb-resource deploy-path="/assets" source-path="/src/main/assets"/>
+        <wb-resource deploy-path="/assets" source-path="/src/main/webapp/assets"/>
         <property name="context-root" value="ssm-web"/>
         <property name="java-output-path" value="/ssm-web/target/classes"/>
     </wb-module>

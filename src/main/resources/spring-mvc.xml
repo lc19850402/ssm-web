@@ -10,7 +10,7 @@
                             http://www.springframework.org/schema/mvc    
                             http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 	<!-- 启动自动扫描 mvc只扫描controller部分-->
-	<context:component-scan base-package="cn.com.ssm.*" use-default-filters="false">
+	<context:component-scan base-package="com.ssm.*" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>	
 	<mvc:annotation-driven />

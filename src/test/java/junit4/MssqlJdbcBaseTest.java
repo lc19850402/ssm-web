@@ -9,7 +9,7 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import cn.com.ssm.utils.jdbc.MssqlJdbcBase;
+import com.ssm.utils.jdbc.MssqlJdbcBase;
 
 public class MssqlJdbcBaseTest extends MssqlJdbcBase {
 	@Before
