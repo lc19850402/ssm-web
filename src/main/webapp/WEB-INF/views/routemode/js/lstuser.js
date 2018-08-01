@@ -2,8 +2,8 @@ var $main_scope;
 angular.module('app', [
 		'ui.router','adduser_app'
 ]).controller('ctrl', function($scope, $rootScope, $state) {
-	$rootScope.rows =[];
-	$rootScope.current = null;
+	$rootScope.rows = [];
+	$rootScope.bean = null;
 	$rootScope.mainshow = true;
 	$scope.params = {
 		pager : {
@@ -15,7 +15,7 @@ angular.module('app', [
 	};
 	$scope.gotoitem = function(row) {
 		$rootScope.mainshow = false;
-		$rootScope.current = row;
+		$rootScope.bean = row;
 		$state.go('adduser');
 	};
 	$scope.getclass = function(row) {
@@ -73,15 +73,11 @@ angular.module('adduser_app', []).controller('adduser_ctrl', function($scope, $r
 			$scope.goback();
 		}
 	});
-	$scope.ajaxDone = false;
-	$scope.saveMode = $rootScope.current != null;
-	$scope.tempdata = $.extend({}, $rootScope.current, {});
+	$scope.addMode = $rootScope.bean == null;
 	$scope.goback = function() {
 		$rootScope.mainshow = true;
-		if (!$scope.ajaxDone) {
-			angular.copy($scope.tempdata, $rootScope.current);
-		} else if (!$scope.saveMode) {
-			$rootScope.rows.insert(0, $rootScope.current);
+		if ($scope.addMode && $rootScope.bean) {
+			$rootScope.rows.insert(0, $rootScope.bean);
 		}
 		$state.go('goback');
 	};
@@ -89,20 +85,20 @@ angular.module('adduser_app', []).controller('adduser_ctrl', function($scope, $r
 		if (!$$.validate.checkInputs($('#frmUser'))) return false;
 		$$.ajax({
 			method : 'saveUser',
-			confirm : '提示：是否添加用户信息?',
-			message : '用户添加完毕!',
+			confirm : '提示：是否保存用户信息?',
+			message : '用户保存完毕!',
 			data : $$.json($scope.bean),
 			success : function(data) {
 				$scope.bean.user_id = data.user_id;
-				$rootScope.current = data;
-				$scope.ajaxDone = true;
+				$rootScope.bean = $rootScope.bean || {};
+				angular.copy($scope.bean, $rootScope.bean);
 			}
 		});
 	};
 	$$.when(function() {
-		if ($rootScope.current) {
-			$scope.bean = $rootScope.current;
-			$scope.bean.user_birthday = new Date($rootScope.current.user_birthday).format('yyyy-MM-dd');
+		if ($rootScope.bean) {
+			$scope.bean = $.extend({}, $rootScope.bean, {});
+			$scope.bean.user_birthday = new Date($scope.bean.user_birthday).format('yyyy-MM-dd');
 		}
 	}).then(function() {
 		$scope.$apply();
