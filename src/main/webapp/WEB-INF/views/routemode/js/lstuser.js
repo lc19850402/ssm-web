@@ -1,7 +1,5 @@
 var $main_scope;
-angular.module('app', [
-		'ui.router','adduser_app'
-]).controller('ctrl', function($scope, $rootScope, $state) {
+angular.module('app', ['ui.router','adduser_app']).controller('ctrl', function($scope, $rootScope, $state) {
 	$rootScope.rows = [];
 	$rootScope.bean = null;
 	$rootScope.mainshow = true;

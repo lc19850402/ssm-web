@@ -3,13 +3,13 @@
 <html>
 <head>
 <%@ include file="../utils/jspbase.jsp"%>
+<script type="text/javascript" src="${base_url}/assets/global/plugins/requirejs/require.min.js?version=${jsversion}"></script>
+<script type="text/javascript" src="${base_url}/assets/global/plugins/requirejs/base.js?version=${jsversion}"></script>
 <title>用户查询列表</title>
-<script type="text/javascript" src="${base_url}/assets/global/plugins/vue/vue.min.js?version=${jsversion}"></script>
-<script type="text/javascript" src="${base_url}/assets/global/plugins/vue/vue-router.min.js?version=${jsversion}"></script>
 </head>
 <body>
 	<div id="app" class="container col-md-8 col-md-offset-2">
-		<div v-show="mainshow">
+		<div v-show="$store.state.mainshow">
 			<div class="panel panel-default">
 				<div class="panel-heading">用户查询列表</div>
 				<div class="panel-body">
@@ -50,9 +50,9 @@
 									<th width="80px">操作</th>
 								</tr>
 							</thead>
-							<template v-text="$store.state.rows">
+							<template v-if="$store.state.rows">
 							<tbody>
-								<tr v-for="(row,$index) in rows">
+								<tr v-for="(row,$index) in $store.state.rows">
 									<td>{{params.pager.pageSize*(params.pager.pageNum-1)+($index+1)}}</td>
 									<td>{{row.user_name}}</td>
 									<td>{{row.user_sex}}</td>
@@ -60,6 +60,9 @@
 									<td>{{row.user_birthday | date('yyyy年MM月dd日')}}</td>
 									<td style="text-align: left;"><p class="ellipsis" :title="row.user_address">{{row.user_address}}</p></td>
 									<td><a herf="javascript:;" @click="gotoitem(row)">编辑</a> <a herf="javascript:;" @click="deleteitem(row)">删除</a></td>
+								</tr>
+								<tr v-if="$store.state.rows.length==0">
+									<td style="background-color: #fff; text-align: left; padding-left: 10px;" colspan="7">无数据记录</td>
 								</tr>
 							</tbody>
 							</template>
@@ -73,54 +76,10 @@
 				</div>
 			</div>
 		</div>
-		<div v-if="!mainshow">
+		<div v-if="!$store.state.mainshow">
 			<router-view></router-view>
 		</div>
 	</div>
 </body>
-<template id="adduser_app">
-<div class="container col-md-6 col-md-offset-3">
-	<div class="row" style="padding: 10px 0px; text-align: right;">
-		<a href="javascript:;" class="btn btn-default" @click="goback()">返回列表</a>
-	</div>
-	<div class="row" id="frmUser">
-		<div class="panel panel-default">
-			<div class="panel-heading">用户信息维护</div>
-			<div class="panel-body" style="padding: 15px 40px;">
-				<div class="form-group">
-					<label class="control-label">姓名：</label> <input type="text" class="form-control" placeholder="请输入名称"
-						data-rule="required" v-model="bean.user_name">
-				</div>
-				<div class="form-group">
-					<label class="control-label">年龄：</label> <input class="form-control" placeholder="请输入年龄" type="text"
-						data-rule="required,number" v-model="bean.user_age" />
-				</div>
-				<div class="form-group">
-					<label class="control-label">性别：</label> <select v-model="bean.user_sex" class="form-control" data-rule="required">
-						<option value="">--请选择--</option>
-						<option value="男">男</option>
-						<option value="女">女</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label class="control-label">生日：</label>
-					<div class="input-group date datepicker" data-provide="datepicker">
-						<input class="form-control date-picker" placeholder="请输入生日" type="text" readonly="readonly" data-rule="required"
-							v-model="bean.user_birthday" /> <span class="input-group-addon"> <span class="fa fa-calendar"></span>
-						</span>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label">住址：</label>
-					<textarea class="form-control" rows="2" style="resize: vertical;" placeholder="请输入住址" v-model="bean.user_address"></textarea>
-				</div>
-				<div class="form-group" style="text-align: right">
-					<input type="button" class="btn btn-success" @click="saveUser()" value="保存信息 (AJAX模式)" />
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</template>
 <script type="text/javascript" src="js/lstuser.js?version=${jsversion}"></script>
 </html>

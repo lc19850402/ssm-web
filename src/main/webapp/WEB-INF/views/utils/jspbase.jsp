@@ -32,8 +32,6 @@
 <script type="text/javascript" src="${base_url}/assets/global/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js?version=${jsversion}"></script>
 <script type="text/javascript" src="${base_url}/assets/global/plugins/angular/angular.min.js?version=${jsversion}"></script>
 <script type="text/javascript" src="${base_url}/assets/global/plugins/angular/angular-ui-router.js?version=${jsversion}"></script>
-<script type="text/javascript" src="${base_url}/assets/global/plugins/vue/vue.js?version=${jsversion}"></script>
-<script type="text/javascript" src="${base_url}/assets/global/plugins/vue/vue-router.js?version=${jsversion}"></script>
 <script type="text/javascript" src="${base_url}/assets/global/scripts/metronic.js"></script>
 <script type="text/javascript" src="${base_url}/assets/scripts/jquery.utils.js?version=${jsversion}"></script>
 <script type="text/javascript" src="${base_url}/assets/scripts/jquery.pager.js?version=${jsversion}"></script>
