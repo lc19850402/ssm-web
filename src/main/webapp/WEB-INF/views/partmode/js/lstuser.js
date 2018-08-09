@@ -1,5 +1,5 @@
 require([
-		"vue","vuex","vue.router",base_url + "partmode/parts/adduser.js"
+		"vue","vuex","vue.router","parts/js/adduser"
 ], function(Vue, Vuex, VueRouter, AddUser) {
 	Vue.use(Vuex);
 	Vue.use(VueRouter);

@@ -1,4 +1,4 @@
-define(["text!"+base_url+"partmode/adduser"], function(template) {
+define(["text!parts/adduser"], function(template) {
     return {
     	template : template,
     	data : function() {

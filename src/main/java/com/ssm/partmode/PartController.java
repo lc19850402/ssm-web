@@ -10,7 +10,7 @@ public class PartController {
 	public String lstuser_view() {
 		return "partmode/lstuser";
 	}
-	@RequestMapping("adduser")
+	@RequestMapping("parts/adduser")
 	public String adduser_view() {
 		return "partmode/parts/adduser";
 	}

@@ -1,11 +1,11 @@
 (function() {
 	requirejs.config({
-		baseUrl : base_url + "/assets/global/plugins",
+		baseUrl : '',//base_url,默认使用引用requirejs的路径
 		paths : {
-			"vue" : "vue/vue.min",
-			"vuex" : "vue/vuex.min",
-			"vue.router" : "vue/vue-router.min",
-			"text" : "requirejs/text.min"
+			"vue" : base_url + "assets/global/plugins/vue/vue.min",
+			"vuex" : base_url + "assets/global/plugins/vue/vuex.min",
+			"vue.router" : base_url + "assets/global/plugins/vue/vue-router.min",
+			"text" : base_url + "assets/global/plugins/requirejs/text.min"
 		},
 		waitSeconds : 15,
 		map : {},
